@@ -8,8 +8,8 @@ router.route("/crearPost").post(postController.createPost);
 //Obtención de un post particular disponible en la DB
 router.route("/obtenerPost/:id").get(postController.obtenerPost);
 
-//Obtención de los post disponibles en la DB
-router.route("/obtenerPosts").get(postController.obtenerPosts);
+//Obtención de posts para mostrar en la página principal
+router.route("/").get(postController.obtenerPosts);
 
 //Modificación de un post particular disponible en la DB
 router.route("/modificarPost/:id").patch(postController.modificarPost);

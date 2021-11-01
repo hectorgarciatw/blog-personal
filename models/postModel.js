@@ -2,15 +2,19 @@ const mongoose = require("mongoose");
 
 //Creación del Schema Post
 const postSchema = new mongoose.Schema({
-    titulo: {
+    title: {
         type: String,
         required: [true, "Un post debe tener un título"],
     },
-    descripción: {
+    description: {
         type: String,
         required: [true, "Un post debe tener una descripción"],
     },
-    tecnologías: {
+    date: {
+        type: Date,
+        required: [true, "Un post debe tener una fecha"],
+    },
+    technologies: {
         type: [String],
         required: [true, "Un post debe contar con tecnologías"],
     },

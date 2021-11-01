@@ -14,10 +14,5 @@ app.use(express.json());
 //Configurando archivos estáticos
 app.use(express.static(path.join(__dirname, "public")));
 
-//Montando la ruta
-app.get("/", (req, res) => {
-    res.status(200).render("index");
-});
-
-app.use("/posts", postRouter);
+app.use("/", postRouter);
 module.exports = app;

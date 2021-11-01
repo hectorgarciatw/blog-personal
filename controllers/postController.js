@@ -1,4 +1,5 @@
 const Post = require("../models/postModel");
+const moment = require("moment");
 
 //Obtengo un articulo
 exports.getArticle = (req, res) => {
@@ -49,13 +50,17 @@ exports.obtenerPost = async (req, res) => {
 exports.obtenerPosts = async (req, res) => {
     try {
         const posts = await Post.find();
-
-        res.status(200).json({
-            status: "success",
-            resultSize: posts.length,
-            data: {
-                posts: posts,
-            },
+        posts.forEach((item) => {
+            moment.locale("es");
+            //Fecha de carga del post
+            let oldDate = item.date;
+            oldDate = moment(oldDate).toISOString();
+            //Diferencia en días de la fecha actual y la del post
+            item.postDate = moment(oldDate).startOf("day").fromNow();
+        });
+        console.log(JSON.stringify(posts));
+        res.render("index.ejs", {
+            posts: posts,
         });
     } catch (err) {
         console.log(err.message);

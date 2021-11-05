@@ -13,27 +13,65 @@
         <title>Blog-personal</title>
     </head>
     <body>
-        <div class="container mt-5 mb-3">
-            <div class="row">
-                <% posts.forEach((post) => { %>
-                <div class="col-md-4">
-                    <div class="card p-3 mb-2">
-                        <div class="d-flex justify-content-between">
-                            <div class="d-flex flex-row align-items-center">
-                                <div class="icon"><i class="bx bxs-bot"></i></div>
-                                <div class="ms-2 c-details">
-                                    <h6 class="mb-0"><%= post.title %></h6>
-                                    <span id="postDate"><%= post.postDate %> </span>
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light static-top mb-5 shadow">
+            <div class="container">
+                <a class="navbar-brand" href="#">Lic. García Héctor</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Acerca</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Tecnologías</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Page Content -->
+        <div class="container">
+            <div class="card border-0 shadow my-5">
+                <div class="card-body p-5">
+                    <h1 class="fw-light">Recursos</h1>
+                    <p class="lead">Bienvenido a mi lista de árticulos sobre el mundo del desarrollo</p>
+                    <!-- Page Content -->
+                    <div class="container mt-5 mb-3">
+                        <div class="row">
+                            <% posts.forEach((post) => { %>
+                            <div class="col-md-4">
+                                <div class="card p-3 mb-2" style="background-color: #c3c3c359">
+                                    <div class="d-flex justify-content-between">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <div class="icon"><i class="bx bxs-bot"></i></div>
+                                            <div class="ms-2 c-details">
+                                                <h6 class="mb-0"><%= post.title %></h6>
+                                                <span id="postDate"><%= post.postDate %> </span>
+                                            </div>
+                                        </div>
+                                        <div class="badge"><span><%= post.technologies[0] %></span></div>
+                                    </div>
+                                    <div class="mt-5">
+                                        <h3 class="card-description"><%= post.description %></h3>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="badge"><span><%= post.technologies[0] %></span></div>
-                        </div>
-                        <div class="mt-5">
-                            <h3 class="card-description"><%= post.description %></h3>
+                            <% }) %>
                         </div>
                     </div>
+                    <div style="height: 700px"></div>
+                    <p class="lead mb-0">Acá va el footer!</p>
                 </div>
-                <% }) %>
             </div>
         </div>
 

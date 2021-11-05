@@ -7,6 +7,15 @@ body {
     padding-top: 69 px;
 }
 
+/* Set a background image by replacing the URL below */
+body {
+    background: url("https://source.unsplash.com/twukN12EN7c/1920x1080") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
 .card-description {
     font-size: 15px;
 }
@@ -60,4 +69,14 @@ body {
 
 .text2 {
     color: #a5aec0;
+}
+
+.carousel-item {
+    height: 65vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }

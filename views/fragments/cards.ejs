@@ -1,0 +1,23 @@
+<div class="container mt-5 mb-3">
+    <div class="row">
+        <% posts.forEach((post) => { %>
+        <div class="col-md-4">
+            <div class="card p-3 mb-2" style="background-color: #c3c3c359">
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex flex-row align-items-center">
+                        <div class="icon"><i class="bx bxs-bot"></i></div>
+                        <div class="ms-2 c-details">
+                            <h6 class="mb-0"><%= post.title %></h6>
+                            <span id="postDate"><%= post.postDate %> </span>
+                        </div>
+                    </div>
+                    <div class="badge"><span><%= post.technologies[0] %></span></div>
+                </div>
+                <div class="mt-5">
+                    <h3 class="card-description"><%= post.description %></h3>
+                </div>
+            </div>
+        </div>
+        <% }) %>
+    </div>
+</div>
